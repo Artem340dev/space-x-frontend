@@ -1,0 +1,570 @@
+:root {
+    --page-standard-padding: 10vw;
+    --website-width: calc(100vw - 2 * var(--page-standard-padding));
+
+    --element-border-color: #989393;
+    --menu-background-color: #150a01;
+}
+
+a, p, h1 {
+    margin: 0;
+}
+
+select, option, input {
+    all: unset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: revert;
+    background: initial;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 100;
+    src: url('../../fonts/MuseoSansCyrl/MuseoSansCyrl-100.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 300;
+    src: url('../../fonts/MuseoSansCyrl/MuseoSansCyrl-300.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 500;
+    src: url('../../fonts/MuseoSansCyrl/MuseoSansCyrl-500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 700;
+    src: url('../../fonts/MuseoSansCyrl/MuseoSansCyrl-700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 900;
+    src: url('../../fonts/MuseoSansCyrl/MuseoSansCyrl-900.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 200;
+    src: url('../../fonts/Fustat/Fustat-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 300;
+    src: url('../../fonts/Fustat/Fustat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 400;
+    src: url('../../fonts/Fustat/Fustat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 500;
+    src: url('../../fonts/Fustat/Fustat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 600;
+    src: url('../../fonts/Fustat/Fustat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 700;
+    src: url('../../fonts/Fustat/Fustat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 800;
+    src: url('../../fonts/Fustat/Fustat-ExtraBold.ttf') format('truetype');
+}
+
+.page-customize-menu {
+    position: relative;
+
+    width: 100%;
+    height: min(75px, 10vw);
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background: black;
+}
+
+.page-customize-menu-content {
+    position: relative;
+
+    padding-left: var(--page-standard-padding);
+    padding-right: var(--page-standard-padding);
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-customize-menu-buttons-section {
+    position: relative;
+
+    width: auto;
+    height: 50%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    align-items: center;
+}
+
+.page-customize-menu-button {
+    position: relative;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    width: max-content;
+    height: 100%;
+
+    background: #0077FF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverable-object::before {
+    position: absolute;
+    content: '';
+    
+    width: 100%;
+    height: 100%;
+    background: black;
+
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 99;
+
+    transition: 0.2s all;
+}
+
+.hoverable-object-actived:hover::before {
+    opacity: 0.5;
+}
+
+.page-customize-menu-save-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.page-customize-menu-save-button-text {
+    position: relative;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+
+    color: white;
+}
+
+.page-customize-menu-pages-optionbar {
+    position: relative;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    width: max-content;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0;
+}
+
+.page-customize-menu-pages-optionbar-content {
+    position: relative;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    width: max-content;
+    height: 50%;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+
+    background: black;
+    border: 2px solid #0077FF;
+    color: white;
+
+    line-height: inherit;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-customize-menu-pages-optionbar-content::-ms-expand {
+    display: none;
+}
+
+.page-customize-menu-pages-optionbar-content-option {
+    position: relative;
+
+    background: white;
+    border: none;
+    border-radius: none;
+    color: black;
+}
+
+.page-admin-auth {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background: black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-admin-auth-content {
+    position: relative;
+
+    width: 35%;
+    height: max-content;
+
+    background: white;
+
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-admin-auth-content-input-container {
+    position: relative;
+
+    width: 65%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.page-admin-auth-content-input-container label {
+    position: relative;
+    
+    color: black;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-auth-content-input-container input {
+    position: relative;
+    
+    width: 100%;
+    height: 50px;
+
+    padding-left: 1vw;
+    
+    color: black;
+    background: white;
+    border: 2px solid #0077FF;
+
+    box-sizing: border-box;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-auth-content-sign-in-button {
+    position: relative;
+    
+    width: auto;
+    height: 50px;
+    aspect-ratio: 2 / 1;
+    
+    background: #0077FF;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.2s background;
+}
+
+.page-admin-auth-content-sign-in-button:hover {
+    background: white;
+    border: 2px solid #0077FF;
+}
+
+.page-admin-auth-content-sign-in-button:hover p {
+    color: #0077FF;
+}
+
+.page-admin-auth-content-sign-in-button p {
+    position: relative;
+
+    color: white;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-auth-content-input-container input::placeholder {
+    color: #9D9D9D;
+}
+
+.page-admin-auth-content-main-text {
+    position: relative;
+
+    color: black;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.page-admin-edit-form {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 99999;
+
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-admin-edit-form::before {
+    position: absolute;
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    background: black;
+    opacity: 0.5;
+}
+
+.page-admin-edit-form-actived {
+    display: flex;
+}
+
+.page-admin-edit-form-content {
+    position: relative;
+
+    width: 35%;
+    height: max-content;
+
+    background: white;
+
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-admin-edit-form-content-optionbar-container {
+    position: relative;
+
+    width: 65%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.page-admin-edit-form-content-optionbar-container label {
+    position: relative;
+    
+    color: black;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-edit-form-content-optionbar-container-content {
+    position: relative;
+    
+    width: 100%;
+    height: 50px;
+
+    padding-left: 1vw;
+    
+    color: black;
+    background: white;
+    border: 2px solid #0077FF;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.page-admin-edit-form-content-optionbar-container-content-option {
+    position: relative;
+
+    background: white;
+    border: none;
+    border-radius: none;
+    color: black;
+}
+
+.page-admin-edit-form-content-input-container {
+    position: relative;
+
+    width: 65%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.page-admin-edit-form-content-input-container label {
+    position: relative;
+    
+    color: black;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-edit-form-content-input-container input {
+    position: relative;
+    
+    width: 100%;
+    height: 50px;
+
+    padding-left: 1vw;
+    
+    color: black;
+    background: white;
+    border: 2px solid #0077FF;
+
+    box-sizing: border-box;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-edit-form-content-sign-in-button {
+    position: relative;
+    
+    width: auto;
+    height: 50px;
+    aspect-ratio: 2 / 1;
+    
+    background: #0077FF;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.2s background;
+}
+
+.page-admin-edit-form-content-sign-in-button:hover {
+    background: white;
+    border: 2px solid #0077FF;
+}
+
+.page-admin-edit-form-content-sign-in-button:hover p {
+    color: #0077FF;
+}
+
+.page-admin-edit-form-content-sign-in-button p {
+    position: relative;
+
+    color: white;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-admin-edit-form-content-input-container input::placeholder {
+    color: #9D9D9D;
+}
+
+.page-admin-edit-form-content-main-text {
+    position: relative;
+
+    color: black;
+
+    font-family: 'Fustat', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}

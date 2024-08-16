@@ -1,0 +1,329 @@
+.page-menu {
+  position: relative;
+
+  width: 100%;
+  height: min(100px, 10vw);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.page-menu::before {
+  position: absolute;
+  content: '';
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--menu-background-color);
+  border: 1px solid var(--element-border-color);
+
+  box-sizing: border-box;
+  opacity: 0.2;
+}
+
+.page-menu-content {
+  position: relative;
+
+  padding-left: var(--page-standard-padding);
+  padding-right: var(--page-standard-padding);
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.page-menu-logotype {
+  position: relative;
+
+  width: auto;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-menu-logotype-image {
+  position: relative;
+
+  width: auto;
+  height: 100%;
+}
+
+.page-menu-navigation {
+  position: relative;
+
+  width: auto;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  align-items: center;
+}
+
+.page-menu-navigation-element {
+  position: relative;
+
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 2.5cqh;
+  font-weight: 300;
+
+  color: white;
+}
+
+.pre-hovered-text > *::after {
+  position: absolute;
+
+  width: 0;
+  height: 1px;
+
+  content: '';
+
+  left: 0;
+  bottom: -2px;
+}
+
+.hovered-text-actived > *::after {
+  background: #B1B1B1;
+  animation: pageMenuNavigationOptionHoverAfterAnimation 0.25s ease-out forwards;
+}
+
+.hovered-text-deactived > *::after {
+  background: white;
+  animation: pageMenuNavigationOptionUnhoverAfterAnimation 0.25s ease-out forwards;
+}
+
+.hovered-text-actived > * {
+  animation: pageMenuNavigationOptionHoverAnimation 0.25s forwards;
+}
+
+.hovered-text-deactived > * {
+  animation: pageMenuNavigationOptionUnhoverAnimation 0.25s forwards;
+}
+
+.company-description-section {
+  position: relative;
+
+  padding-left: var(--page-standard-padding);
+  padding-right: var(--page-standard-padding);
+
+  width: min(100%, max-content);
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-description-section-clickable-information-container {
+  position: relative;
+
+  width: auto;
+  height: max-content;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  justify-content: space-between;
+}
+
+.company-description-section-clickable-information-container-text-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.company-description-section-clickable-information-container-text-container-large-text {
+  position: relative;
+
+  width: 100%;
+  
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  color: white;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(255,81,0,1) 100%);
+  background-size: cover;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-description-section-clickable-information-container-text-container-small-text {
+  position: relative;
+
+  width: 100%;
+  
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+
+  text-transform: lowercase;
+
+  color: white;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 25%, rgba(255,81,0,1) 100%);
+  background-size: cover;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-description-section-benefits-container {
+  position: relative;
+
+  width: auto;
+  height: auto;
+
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: 1fr 1fr;
+}
+
+.company-description-section-benefits-container-element {
+  position: relative;
+
+  width: 10vw;
+  height: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-description-section-benefits-container-element-small-text {
+  position: relative;
+  
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 1em;
+  font-weight: 100;
+
+  color: #b1b1b1;
+}
+
+.company-description-section-benefits-container-element-large-text {
+  position: relative;
+  
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+
+  color: white; 
+}
+
+.company-description-section-benefits-container-element::before {
+  position: absolute;
+  content: '';
+
+  width: 100%;
+  height: 100%;
+
+  --border: 1px solid var(--element-border-color);
+
+  box-sizing: border-box;
+  opacity: 0.2;
+}
+
+.company-description-section-clickable-information-container-start-button {
+  position: relative;
+  
+  width: max-content;
+  height: auto;
+
+  z-index: 2;
+
+  border: none;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.company-description-section-clickable-information-container-start-button img {
+  position: relative;
+
+  width: auto;
+  height: 50px;
+}
+
+.company-description-section-clickable-information-container-start-button-text {
+  position: absolute;
+
+  z-index: 10;
+
+  font-family: "MuseoSansCyrl", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+#company-description-section-benefits-container-element-up-left::before {
+  background: radial-gradient(35vw at 90% 90%, rgb(177, 177, 177, 0.5) 0%, rgba(0,0,0,0.1) 25%);
+}
+
+#company-description-section-benefits-container-element-up-right::before {
+  background: radial-gradient(35vw at 10% 90%, rgb(177, 177, 177, 0.5) 0%, rgba(0,0,0,0.1) 25%);
+}
+
+#company-description-section-benefits-container-element-down-left::before {
+  background: radial-gradient(35vw at 90% 10%, rgb(177, 177, 177, 0.5) 0%, rgba(0,0,0,0.1) 25%);
+}
+
+#company-description-section-benefits-container-element-down-right::before {
+  background: radial-gradient(35vw at 10% 10%, rgb(177, 177, 177, 0.5) 0%, rgba(0,0,0,0.1) 25%);
+}
+
+a, p {
+  margin: 0;
+  all: unset;
+}
+
+@keyframes pageMenuNavigationOptionHoverAnimation {
+  0% {
+      color: white;
+  }
+
+  100% {
+      color: #B1B1B1;
+  }
+}
+
+@keyframes pageMenuNavigationOptionHoverAfterAnimation {
+  0% {
+      width: 0;
+  }
+
+  100% {
+      width: 100%;
+  }
+}
+
+@keyframes pageMenuNavigationOptionUnhoverAfterAnimation {
+  0% {
+      width: 100%;
+      left: 0;
+  }
+
+  100% {
+      width: 0;
+      left: 100%;
+  }
+}
